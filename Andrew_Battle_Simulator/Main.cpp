@@ -16,6 +16,30 @@ void generateName() {
     n1.getInfo(generator);
 }
 
+void bubbleSort() {
+    const int amount = 10;
+    int number[amount];
+
+    for (int i = 0; i < amount; i++) {
+        number[i] = rand() % 50 + 1;
+    }
+
+    for (int j = 0; j < amount; j++) {
+        for (int k = amount - 1; k >= j ; k--) {
+            if (number[k-1] > number[k]) {
+                int i = number[k - 1];
+                number[k - 1] = number[k];
+                number[k] = i;
+            }
+        }
+    }
+
+    cout << "Amount of damage: " << endl;
+    for (int i = 0; i < amount; i++) {
+        cout << number[i] << ' ';
+    }
+}
+
 int main() {
     srand(time(NULL));
 
@@ -25,11 +49,17 @@ int main() {
     spellBook.learnNewSpell();
     spellBook.showList_of_Spells();
 
+    cout << endl;
+
     generateName();
 
     inventory inventory("Weapons.csv");
     inventory.wieldNewWeapon();
     inventory.showList_of_Weapons();
+
+    cout << endl;
+
+    bubbleSort();
 
     return 0;
 }
