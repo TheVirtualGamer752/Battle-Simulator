@@ -16,28 +16,25 @@ void generateName() {
     n1.getInfo(generator);
 }
 
-void bubbleSort() {
-    int amount = rand() % 20;
-    int* number = new int[amount];
+void bubbleSort(int *array, int amount) {
+  
 
-    for (int i = 0; i < amount; i++) {
-        number[i] = rand() % 50 + 1;
-    }
+    //move to generate damage
+   /* for (int i = 0; i < amount; i++) {
+        array[i] = rand() % 50 + 1;
+    }*/
 
     for (int j = 0; j < amount; j++) {
         for (int k = amount - 1; k >= j ; k--) {
-            if (number[k-1] > number[k]) {
-                int i = number[k - 1];
-                number[k - 1] = number[k];
-                number[k] = i;
+            if (array[k-1] > array[k]) {
+                int i = array[k - 1];
+                array[k - 1] = array[k];
+                array[k] = i;
             }
         }
     }
 
-    cout << "Amount of damage: " << endl;
-    for (int i = 0; i < amount; i++) {
-        cout << number[i] << ' ';
-    }
+    
 }
 
 int main() {
@@ -59,7 +56,19 @@ int main() {
 
     cout << endl;
 
-    bubbleSort();
+    int amount = rand() % 20;
+    int* damages = new int[amount];
+
+    //generateDamage(numbers, size);
+
+    bubbleSort(damages, amount);
+  
+    //binary search (damages, 55) // return index of  value 55 - 5  // return -1
+    //https://www.geeksforgeeks.org/binary-search/
+    cout << "Amount of damage: " << endl;
+    for (int i = 0; i < amount; i++) {
+        cout << damages[i] << ' ';
+    }
 
     cout << "Why remove the code?" << endl;
 
