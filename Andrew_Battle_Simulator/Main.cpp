@@ -43,6 +43,22 @@ void bubbleSort() {
 int main() {
     srand(time(NULL));
 
+    generateName();
+
+    spellBook spellBook("Spells.csv");
+    spellBook.learnNewSpell();
+    spellBook.showList_of_Spells();
+
+    cout << endl;
+
+    generateName();
+
+    inventory inventory("Weapons.csv");
+    inventory.wieldNewWeapon();
+    inventory.showList_of_Weapons();
+
+    cout << endl;
+
     bubbleSort();
 
     cout << "Why remove the code?" << endl;
