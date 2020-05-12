@@ -44,7 +44,8 @@ int main() {
     srand(time(NULL));
 
     bubbleSort();
-    cout << "my line " << endl;
+
+    cout << "Why remove the code?" << endl;
 
     return 0;
 }
