@@ -43,27 +43,7 @@ void bubbleSort() {
 int main() {
     srand(time(NULL));
 
-    generateName();
-
-    spellBook spellBook("Spells.csv");
-    spellBook.learnNewSpell();
-    spellBook.showList_of_Spells();
-
-    cout << endl;
-
-    generateName();
-
-    inventory inventory("Weapons.csv");
-    inventory.wieldNewWeapon();
-    inventory.showList_of_Weapons();
-
-    cout << endl;
-
     bubbleSort();
 
     return 0;
 }
-
-//NameGenerator generator;
-//generator.readDataFromFile("HeroNames.csv");
-//cout << generator.generateName();
