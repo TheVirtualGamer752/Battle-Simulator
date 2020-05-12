@@ -44,6 +44,7 @@ int main() {
     srand(time(NULL));
 
     bubbleSort();
+    cout << "my line " << endl;
 
     return 0;
 }
