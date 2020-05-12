@@ -17,8 +17,8 @@ void generateName() {
 }
 
 void bubbleSort() {
-    const int amount = 10;
-    int number[amount];
+    int amount = rand() % 20;
+    int* number = new int[amount];
 
     for (int i = 0; i < amount; i++) {
         number[i] = rand() % 50 + 1;
