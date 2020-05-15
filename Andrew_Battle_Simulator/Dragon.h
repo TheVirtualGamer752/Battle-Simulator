@@ -29,6 +29,6 @@ public:
 	}
 
 	int breathFire() {
-cout << "Test line" << endl;
+
 	}
 };

@@ -8,7 +8,7 @@
 #include "NameGenerator.h"
 #include "SpellBook.h"
 #include "Inventory.h"
-using namespace std; // Standard Template Definition or Super Traditional Definition
+using namespace std;
 
 void generateName() {
     NameGenerator generator("HeroNames.csv");
@@ -16,25 +16,26 @@ void generateName() {
     n1.getInfo(generator);
 }
 
-void bubbleSort(int *array, int amount) {
-  
+void generateDamage(int* numbers, int size) {
+    for (int i = 0; i < size; i++) {
+        numbers[i] = rand() % 50 + 1;
+    }
+}
 
-    //move to generate damage
-   /* for (int i = 0; i < amount; i++) {
-        array[i] = rand() % 50 + 1;
-    }*/
-
+void bubbleSort(int* array, int amount) {
     for (int j = 0; j < amount; j++) {
-        for (int k = amount - 1; k >= j ; k--) {
-            if (array[k-1] > array[k]) {
+        for (int k = amount - 1; k >= j; k--) {
+            if (array[k - 1] > array[k]) {
                 int i = array[k - 1];
                 array[k - 1] = array[k];
                 array[k] = i;
             }
         }
     }
+}
 
-    
+void binarySearch(int* damages) {
+
 }
 
 int main() {
@@ -59,18 +60,21 @@ int main() {
     int amount = rand() % 20;
     int* damages = new int[amount];
 
-    //generateDamage(numbers, size);
+    generateDamage(damages, amount);
 
     bubbleSort(damages, amount);
   
-    //binary search (damages, 55) // return index of  value 55 - 5  // return -1
-    //https://www.geeksforgeeks.org/binary-search/
     cout << "Amount of damage: " << endl;
     for (int i = 0; i < amount; i++) {
         cout << damages[i] << ' ';
     }
 
-    cout << "Why remove the code?" << endl;
+    cout << endl;
+
+    binarySearch(damages);
 
     return 0;
 }
+
+//binary search (damages, 55) // return index of  value 55 - 5  // return -1
+    //https://www.geeksforgeeks.org/binary-search/
