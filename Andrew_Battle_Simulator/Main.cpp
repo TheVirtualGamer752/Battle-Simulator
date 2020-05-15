@@ -38,7 +38,7 @@ void binarySearch(int* damages) {
 
 }
 
-int main() {
+int main99() {
     srand(time(NULL));
 
     generateName();
