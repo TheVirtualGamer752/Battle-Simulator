@@ -25,13 +25,14 @@ public:
 		mass = rand() % 100 + 1;
 		distance = rand() % 1000 + 50;
 		price = getPrice();
+
 		this->sender = sender;
 		this->receiver = receiver;
 		this->post_stamp = post_stamp;
 		this->height = height;
 		this->width = width;
 		this->length = length;
-		volume = getVolume();
+		this->volume = getVolume("m3");
 	}
 
 	void getParcelInfo() {
@@ -47,39 +48,29 @@ public:
 		cout << "Price: $" << price << endl;
 	}
 
-	double getVolume() {
-		double figure = height * width * length / 1000000;
-		/*if (height < 100 || width < 100 || length < 100) {
+	double getVolume(string dimention) {
+		double figure = 0;
+		if (dimention.compare("cm3") == 0) {
 			figure = height * width * length;
 		}
-		else if (height >= 100 || width >= 100 || length >= 100) {
+		else {
 			height = height / 100;
 			width = width / 100;
 			length = length / 100;
 			figure = height * width * length;
-		}*/
+		}
 		return figure;
 	}
 
 	double getPrice() {
-		double price1, price2;
-		price1 = distance / 10 * 5;
-		if (mass < 20) {
-			price2 = 15;
-		}
-		else if (mass >= 20 && mass < 40) {
-			price2 = 20;
-		}
-		else if (mass >= 40 && mass < 60) {
-			price2 = 25;
-		}
-		else if (mass >= 60 && mass < 80) {
-			price2 = 30;
-		}
-		else if (mass >= 80 && mass <= 100) {
-			price2 = 35;
-		}
-		double price = price1 + price2;
-		return price;
+		double price = 0;
+		
+		if (mass < 20)					    price = 15;
+		else if (mass >= 20 && mass < 40)   price = 20;
+		else if (mass >= 40 && mass < 60)   price = 25;
+		else if (mass >= 60 && mass < 80)   price = 30;
+		else if (mass >= 80 && mass <= 100) price = 35;
+		
+		return (distance / 10 * 5) + price;
 	}
 };
